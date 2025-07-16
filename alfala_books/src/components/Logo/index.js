@@ -1,8 +1,5 @@
+import './style.css'
 import logo from '../../img/logo.svg';
-import '../Logo/style.css'
-
-
-
 
 function Logo () {
     return (
