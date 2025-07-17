@@ -1,0 +1,10 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Livro 1 -->
+  <rect x="8" y="10" width="48" height="8" rx="2" fill="#f48fb1" />
+  <!-- Livro 2 -->
+  <rect x="8" y="22" width="48" height="8" rx="2" fill="#f06292" />
+  <!-- Livro 3 -->
+  <rect x="8" y="34" width="48" height="8" rx="2" fill="#ec407a" />
+  <!-- Marcador -->
+  <path d="M20 34v8l4-4-4-4" fill="white" />
+</svg>
