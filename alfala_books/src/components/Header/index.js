@@ -1,29 +1,24 @@
-import '../Header/style.css'
 import Logo from '../Logo'
 import OptionHeader from '../OptionsHeader';
 import IconesHeader from '../IconesHeader';
 import styled from 'styled-components';
 
+// 1. Corrigido para "background-color"
 const HeaderContainer = styled.header`
-    backgroud-color: #FFF;
-    display:flex;
+    background-color: #FFF;
+    display: flex;
     justify-content: center;
-
 `
 
 function Header() {
     return (
-
-        <header className="App-header">
-            <HeaderContainer>
+        // 2. Removido o <header> extra que envolvia o componente
+        <HeaderContainer>
             <Logo />
-                <OptionHeader />
-                <IconesHeader />
-                </HeaderContainer>
-
-        </header>
+            <OptionHeader />
+            <IconesHeader />
+        </HeaderContainer>
     )
 }
-
 
 export default Header
