@@ -1,50 +1,53 @@
-/* Fundo geral da página */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #ffeef3; /* rosa bem claro */
-  font-family: Arial, sans-serif;
-}
 
 
-.App-header {
+
+
+/* Divisões laterais */
+.header-left,
+.header-right {
+  flex: 1;
   display: flex;
-  justify-content: space-evenly; 
   align-items: center;
-  background-color: white;
-  height: 60px;
-  box-shadow: 0 2px 4px #cdb4db;
-  padding: 0 20px;
 }
 
-/* Ícones do menu */
-.icones {
+/* Logo alinhado à esquerda */
+.header-left {
+  justify-content: flex-start;
+}
+
+/* Menu central */
+.header-center {
+  flex: 2;
   display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Estilo dos links */
+.header-center a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #b386ce;
+  transition: color 0.3s;
+}
+
+.header-center a:hover {
+  color: #e91e63;
+}
+
+/* Ícones alinhados à direita */
+.header-right {
+  justify-content: flex-end;
   gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  align-items: center;
 }
 
+/* Estilo padrão para os ícones */
 .icone img {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   transition: transform 0.3s ease;
 }
 
 .icone img:hover {
   transform: scale(1.1);
-}
-
-.App-header > div {
-  margin-left: 20px;
-  font-size: 16px;
-  color: #cdb4db;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.App-header > div:hover {
-  color: #e91e63;
 }

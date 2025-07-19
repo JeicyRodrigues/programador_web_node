@@ -1,5 +1,5 @@
 import './style.css';
-import livros from '../img/livros.svg';
+import livros from '../../img/livros.svg'
 
 const icones = [livros];
 
