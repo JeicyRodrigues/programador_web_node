@@ -11,48 +11,72 @@ export const getLivros = (req, res) => {
     }
 };
 
-export const getLivro = (req, res) =>{
-    try{
+
+export const getLivro = (req, res) => {
+    try {
         const id = req.params.id
-        const livro = getLivroPorId(id)
-        res.send(livro)
+
+        if (id && Number(id)) {
+            const livro = getLivroPorId(id)
+            res.send(livro)
+
+        } else {
+            res.status(422)
+            res.send("Id Inválido")
+        }
     } catch (error) {
         res.status(500)
         res.send(error.message)
     }
 }
 
-export const postLivro = async (req, res) => {
+export const postLivro = (req, res) => {
     try {
         const livroNovo = req.body;
-        await insereLivro(livroNovo);
-        res.status(201).json(livroNovo);
-    }catch (error) {
-        res.status(500).send(error.message);
-    }
-}
+        if (req.body.nome) {
+            insereLivro(livroNovo);
+            res.status(201).json(livroNovo);
+        } else {
+            res.status(422)
+            res.send("O campo nome é obrigatório")
+        }
 
-export const patchLivro = async(req,res) => {
-    try {
-        const id = req.params.id
-        const body = req.body
-        modificaLivro (body,id)
-        res.send("Livro modificado com sucesso")
     } catch (error) {
         res.status(500).send(error.message);
     }
 }
 
-
-export const deletaLivro = (req, res) => {
+export const patchLivro = (req, res) => {
     try {
         const id = req.params.id
-        deletaLivroPorId(id)
-        res.send("livro deletado com sucesso")
+        const body = req.body
+        if (id && Number(id)) {
+            modificaLivro(body, id)
+            res.send("Livro modificado com sucesso");
+        } else {
+            res.status(422)
+            res.send("Id inválido")
+        }
+
     } catch (error) {
         res.status(500)
         res.send(error.message)
     }
 };
- 
- 
+
+export const deletaLivro = (req, res) => {
+    try {
+        const id = req.params.id
+        if (id && Number(id)) {
+            deletaLivroPorId(id)
+            res.send("livro deletado com sucesso")
+        } else {
+            res.status(422)
+            res.send("Id inválido")
+        }
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+};
+
